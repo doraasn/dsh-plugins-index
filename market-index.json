@@ -109,12 +109,12 @@
                                      },
                         "versions":  [
                                          {
-                                             "version":  "0.10.23",
-                                             "publishTimestamp":  1792692177,
+                                             "version":  "0.10.24",
+                                             "publishTimestamp":  1792692453,
                                              "source":  {
                                                             "type":  "git",
                                                             "url":  "https://github.com/doraasn/dsh-quota-board.git",
-                                                            "commit":  "c1c060a9b6bee9f9858ae2685decffd49be98b59"
+                                                            "commit":  "f222b47eef84ca5b082e3efa55c7f7818b9d71a0"
                                                         },
                                              "engines":  {
                                                              "dsh":  "\u003e=0.2.1-rc.2"
