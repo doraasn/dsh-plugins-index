@@ -161,7 +161,7 @@
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-cloud-sync.git",
-            "commit": "dd60f5714a44c6b1233bc97f6f885f3dcb608d8e"
+            "commit": "24105c691911903b6faa0095be34f4a001b68077"
           },
           "engines": {
             "dsh": ">=0.2.1-0"
