@@ -93,6 +93,20 @@ async function api(path_) {
   return response.json()
 }
 
+/** 该插件是否已把这一版发布到 npm（发布后索引改用 npm 源，国内用户可直达）。 */
+async function npmHas(name, version) {
+  try {
+    const response = await fetch(`https://registry.npmjs.org/${name}`, {
+      headers: { accept: 'application/vnd.npm.install-v1+json' },
+    })
+    if (!response.ok) return false
+    const doc = await response.json()
+    return Boolean(doc.versions && doc.versions[version])
+  } catch {
+    return false
+  }
+}
+
 /** 读某个提交里的文本文件；不存在返回 null。 */
 async function fileAt(repo, path_, ref) {
   try {
@@ -172,7 +186,8 @@ async function buildEntry(config) {
   }
   const pkgFile = await api(`/repos/${config.repo}/contents/package.json?ref=${latest.sha}`)
   const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
-  console.log(`  ${config.repo}  v${latest.version}${latest.fromTag ? ' (tag)' : ' (head)'} -> ${latest.sha.slice(0, 8)}  name=${pkg.name}`)
+  const useNpm = await npmHas(pkg.name, latest.version)
+  console.log(`  ${config.repo}  v${latest.version}${latest.fromTag ? ' (tag)' : ' (head)'} -> ${latest.sha.slice(0, 8)}  name=${pkg.name}  source=${useNpm ? 'npm' : 'git'}`)
   return {
     name: pkg.name,
     title: config.title,
@@ -190,11 +205,13 @@ async function buildEntry(config) {
     versions: [{
       version: latest.version,
       publishTimestamp: Math.floor(new Date(latest.publishedAt || Date.now()).getTime() / 1000),
-      source: {
-        type: 'git',
-        url: `https://github.com/${config.repo}.git`,
-        commit: latest.sha,
-      },
+      source: useNpm
+        ? { type: 'npm' }
+        : {
+            type: 'git',
+            url: `https://github.com/${config.repo}.git`,
+            commit: latest.sha,
+          },
       engines: pkg.engines?.dsh ? { dsh: pkg.engines.dsh } : undefined,
     }],
   }
