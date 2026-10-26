@@ -1,0 +1,191 @@
+/**
+ * 自动重建插件市场索引（format 1）。
+ *
+ * 数据来源全部走 GitHub API：每个插件仓库取「最新的 vX.Y.Z tag」，
+ * 版本号与该 tag 的 commit 直接写进索引，不再手工维护 commit。
+ *
+ * 用法: GH_TOKEN=xxx node scripts/build-index.mjs [--dry-run]
+ */
+
+import fs from 'node:fs'
+import path from 'node:path'
+
+const TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || ''
+const API = 'https://api.github.com'
+const OUT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..', 'market-index.json')
+const DRY = process.argv.includes('--dry-run')
+
+/** 每个插件的展示信息（仓库名 -> 索引条目元数据）。新增插件在这里加一项即可。 */
+const PLUGINS = [
+  {
+    repo: 'doraasn/dsh-quota-board',
+    title: { zh: '额度看板', en: 'Quota Board' },
+    description: {
+      zh: '侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。',
+      en: 'Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI.',
+    },
+    category: 'quota',
+    labels: ['codex', 'sidebar', 'no-deps'],
+    keywords: ['quota', 'balance', 'codex', 'sidebar', 'deepseek', 'zai'],
+    added: 1792659600,
+  },
+  {
+    repo: 'doraasn/dsh-cloud-sync',
+    title: { zh: '云同步', en: 'Cloud Sync' },
+    description: {
+      zh: '把 DSH 的技能、插件、MCP 配置、全局指令与可选凭据备份到任意 WebDAV，并可按快照恢复。',
+      en: 'Back up DSH skills, plugins, MCP config, AGENTS.md and optional credentials to any WebDAV, and restore from snapshots.',
+    },
+    category: 'backup',
+    labels: ['webdav', 'no-deps'],
+    keywords: ['webdav', 'backup', 'sync', 'cloud'],
+    added: 1792648064,
+  },
+  {
+    repo: 'doraasn/dsh-web-chat',
+    title: { zh: '网页会话', en: 'Web Chat' },
+    description: {
+      zh: '侧栏嵌入 chat.deepseek.com，切换面板不重载，记住上次会话并恢复登录状态。',
+      en: 'Embed chat.deepseek.com in a sidebar panel, keep it alive across switches, remember the last conversation and restore the login snapshot.',
+    },
+    category: 'chat',
+    labels: ['sidebar'],
+    keywords: ['chat', 'deepseek', 'webview', 'sidebar'],
+    added: 1792659600,
+  },
+  {
+    repo: 'doraasn/dsh-mobile-settings',
+    title: { zh: '移动访问设置', en: 'Mobile Access Settings' },
+    description: {
+      zh: '在设置里管理移动访问：局域网与远程连接的开关、端口与二维码入口。',
+      en: 'Manage mobile access from settings: LAN and remote connection switches, ports and QR entry.',
+    },
+    category: 'settings',
+    labels: ['no-deps'],
+    keywords: ['mobile', 'settings', 'lan', 'remote'],
+    added: 1792659600,
+  },
+]
+
+const CATEGORIES = {
+  quota: { title: { zh: '额度与用量', en: 'Quota & usage' } },
+  backup: { title: { zh: '备份与同步', en: 'Backup & sync' } },
+  chat: { title: { zh: '会话与对话', en: 'Chat' } },
+  settings: { title: { zh: '设置增强', en: 'Settings' } },
+}
+
+const LABELS = {
+  codex: { title: { zh: 'Codex', en: 'Codex' } },
+  sidebar: { title: { zh: '侧栏', en: 'Sidebar' } },
+  webdav: { title: { zh: 'WebDAV', en: 'WebDAV' } },
+  'no-deps': { title: { zh: '零依赖', en: 'Zero dependency' } },
+}
+
+async function api(path_) {
+  const response = await fetch(`${API}${path_}`, {
+    headers: {
+      accept: 'application/vnd.github+json',
+      authorization: TOKEN ? `token ${TOKEN}` : undefined,
+      'user-agent': 'dsh-plugins-index-builder',
+    },
+  })
+  if (!response.ok) throw new Error(`${path_} -> HTTP ${response.status}`)
+  return response.json()
+}
+
+/** 版本比较（只处理 x.y.z）。 */
+function compareVersion(a, b) {
+  const pa = a.split('.').map(Number)
+  const pb = b.split('.').map(Number)
+  for (let i = 0; i < 3; i++) {
+    if (pa[i] !== pb[i]) return pa[i] - pb[i]
+  }
+  return 0
+}
+
+async function latestVersion(repo) {
+  const tags = await api(`/repos/${repo}/tags?per_page=100`)
+  const versions = tags
+    .map((tag) => tag.name)
+    .filter((name) => /^v\d+\.\d+\.\d+$/.test(name))
+    .map((name) => name.slice(1))
+    .sort(compareVersion)
+  if (!versions.length) return null
+  const version = versions[versions.length - 1]
+  const tagName = `v${version}`
+  const commit = await api(`/repos/${repo}/commits/${tagName}`)
+  return { version, tagName, sha: commit.sha, publishedAt: commit.commit?.committer?.date }
+}
+
+async function buildEntry(config) {
+  const latest = await latestVersion(config.repo)
+  if (!latest) {
+    console.log(`  跳过 ${config.repo}（没有 vX.Y.Z tag）`)
+    return null
+  }
+  const pkgFile = await api(`/repos/${config.repo}/contents/package.json?ref=${latest.sha}`)
+  const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
+  console.log(`  ${config.repo}  ${latest.tagName} -> ${latest.sha.slice(0, 8)}  name=${pkg.name}`)
+  return {
+    name: pkg.name,
+    title: config.title,
+    description: config.description,
+    icon: `https://raw.githubusercontent.com/${config.repo}/main/icon.svg`,
+    author: 'doraasn',
+    homepage: `https://github.com/${config.repo}`,
+    repository: { url: `https://github.com/${config.repo}` },
+    metadata: {
+      category: config.category,
+      keywords: config.keywords,
+      labels: config.labels,
+      sortKeys: { added: config.added },
+    },
+    versions: [{
+      version: latest.version,
+      publishTimestamp: Math.floor(new Date(latest.publishedAt || Date.now()).getTime() / 1000),
+      source: {
+        type: 'git',
+        url: `https://github.com/${config.repo}.git`,
+        commit: latest.sha,
+      },
+      engines: pkg.engines?.dsh ? { dsh: pkg.engines.dsh } : undefined,
+    }],
+  }
+}
+
+const entries = []
+for (const config of PLUGINS) {
+  const entry = await buildEntry(config)
+  if (entry) entries.push(entry)
+}
+entries.sort((left, right) => left.name.localeCompare(right.name))
+
+const doc = {
+  format: 1,
+  title: { zh: 'doraasn 的 DSH 插件', en: "doraasn's DSH plugins" },
+  description: {
+    zh: '额度看板、云同步、网页会话、移动访问设置——都是我自己写给自己用的 DSH 插件。',
+    en: 'Quota board, cloud sync, web chat and mobile access settings — DSH plugins I built for my own daily use.',
+  },
+  metadata: {
+    categories: CATEGORIES,
+    labels: LABELS,
+    sortKeys: { added: { title: { zh: '收录时间', en: 'Added' }, order: 'desc' } },
+  },
+  plugins: entries,
+}
+
+const text = JSON.stringify(doc, null, 2) + '\n'
+const previous = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : ''
+if (previous === text) {
+  console.log('索引无变化')
+  process.exit(0)
+}
+
+if (DRY) {
+  console.log('--dry-run：不写文件')
+  process.exit(0)
+}
+
+fs.writeFileSync(OUT, text)
+console.log(`已写入 ${OUT}，${entries.length} 个插件`)
