@@ -103,6 +103,10 @@ function compareVersion(a, b) {
   return 0
 }
 
+/**
+ * 取最新版本：优先用 vX.Y.Z tag；没有 tag 的仓库退回默认分支 HEAD，
+ * 版本号读该提交里的 package.json。
+ */
 async function latestVersion(repo) {
   const tags = await api(`/repos/${repo}/tags?per_page=100`)
   const versions = tags
@@ -110,11 +114,21 @@ async function latestVersion(repo) {
     .filter((name) => /^v\d+\.\d+\.\d+$/.test(name))
     .map((name) => name.slice(1))
     .sort(compareVersion)
-  if (!versions.length) return null
-  const version = versions[versions.length - 1]
-  const tagName = `v${version}`
-  const commit = await api(`/repos/${repo}/commits/${tagName}`)
-  return { version, tagName, sha: commit.sha, publishedAt: commit.commit?.committer?.date }
+
+  if (versions.length) {
+    const version = versions[versions.length - 1]
+    const tagName = `v${version}`
+    const commit = await api(`/repos/${repo}/commits/${tagName}`)
+    return { version, sha: commit.sha, publishedAt: commit.commit?.committer?.date, fromTag: true }
+  }
+
+  // 没有 tag：用默认分支 HEAD，版本号从 package.json 读。
+  const repoInfo = await api(`/repos/${repo}`)
+  const branch = repoInfo.default_branch || 'main'
+  const head = await api(`/repos/${repo}/commits/${branch}`)
+  const pkgFile = await api(`/repos/${repo}/contents/package.json?ref=${head.sha}`)
+  const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
+  return { version: pkg.version, sha: head.sha, publishedAt: head.commit?.committer?.date, fromTag: false }
 }
 
 async function buildEntry(config) {
@@ -125,7 +139,7 @@ async function buildEntry(config) {
   }
   const pkgFile = await api(`/repos/${config.repo}/contents/package.json?ref=${latest.sha}`)
   const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
-  console.log(`  ${config.repo}  ${latest.tagName} -> ${latest.sha.slice(0, 8)}  name=${pkg.name}`)
+  console.log(`  ${config.repo}  v${latest.version}${latest.fromTag ? ' (tag)' : ' (head)'} -> ${latest.sha.slice(0, 8)}  name=${pkg.name}`)
   return {
     name: pkg.name,
     title: config.title,
