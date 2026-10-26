@@ -1,265 +1,170 @@
 {
-    "format":  1,
-    "title":  {
-                  "zh":  "doraasn 的 DSH 插件",
-                  "en":  "doraasn\u0027s DSH plugins"
-              },
-    "description":  {
-                        "zh":  "额度看板、云同步、网页会话、移动访问设置——都是我自己写给自己用的 DSH 插件。",
-                        "en":  "Quota board, cloud sync, web chat and mobile access settings — DSH plugins I built for my own daily use."
-                    },
-    "metadata":  {
-                     "categories":  {
-                                        "quota":  {
-                                                      "title":  {
-                                                                    "zh":  "额度与用量",
-                                                                    "en":  "Quota \u0026 usage"
-                                                                }
-                                                  },
-                                        "backup":  {
-                                                       "title":  {
-                                                                     "zh":  "备份与同步",
-                                                                     "en":  "Backup \u0026 sync"
-                                                                 }
-                                                   },
-                                        "chat":  {
-                                                     "title":  {
-                                                                   "zh":  "会话与对话",
-                                                                   "en":  "Chat"
-                                                               }
-                                                 },
-                                        "settings":  {
-                                                         "title":  {
-                                                                       "zh":  "设置增强",
-                                                                       "en":  "Settings"
-                                                                   }
-                                                     }
-                                    },
-                     "labels":  {
-                                    "codex":  {
-                                                  "title":  {
-                                                                "zh":  "Codex",
-                                                                "en":  "Codex"
-                                                            }
-                                              },
-                                    "sidebar":  {
-                                                    "title":  {
-                                                                  "zh":  "侧栏",
-                                                                  "en":  "Sidebar"
-                                                              }
-                                                },
-                                    "webdav":  {
-                                                   "title":  {
-                                                                 "zh":  "WebDAV",
-                                                                 "en":  "WebDAV"
-                                                             }
-                                               },
-                                    "no-deps":  {
-                                                    "title":  {
-                                                                  "zh":  "零依赖",
-                                                                  "en":  "Zero dependency"
-                                                              }
-                                                }
-                                },
-                     "sortKeys":  {
-                                      "added":  {
-                                                    "title":  {
-                                                                  "zh":  "收录时间",
-                                                                  "en":  "Added"
-                                                              },
-                                                    "order":  "desc"
-                                                }
-                                  }
-                 },
-    "plugins":  [
-                    {
-                        "name":  "dsh-quota-board",
-                        "title":  {
-                                      "zh":  "额度看板",
-                                      "en":  "Quota Board"
-                                  },
-                        "description":  {
-                                            "zh":  "侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。",
-                                            "en":  "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
-                                        },
-                        "icon":  "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
-                        "author":  "doraasn",
-                        "homepage":  "https://github.com/doraasn/dsh-quota-board",
-                        "repository":  {
-                                           "url":  "https://github.com/doraasn/dsh-quota-board"
-                                       },
-                        "metadata":  {
-                                         "category":  "quota",
-                                         "keywords":  [
-                                                          "quota",
-                                                          "balance",
-                                                          "codex",
-                                                          "sidebar",
-                                                          "deepseek",
-                                                          "zai"
-                                                      ],
-                                         "labels":  [
-                                                        "codex",
-                                                        "sidebar",
-                                                        "no-deps"
-                                                    ],
-                                         "sortKeys":  {
-                                                          "added":  1792659600
-                                                      }
-                                     },
-                        "versions":  [
-                                         {
-                                             "version":  "0.11.2",
-                                             "publishTimestamp":  1793014654,
-                                             "source":  {
-                                                            "type":  "git",
-                                                            "url":  "https://github.com/doraasn/dsh-quota-board.git",
-                                                            "commit":  "4c6412d237bafa5dabed1252513160a044452fb4"
-                                                        },
-                                             "engines":  {
-                                                             "dsh":  "\u003e=0.2.1-rc.2"
-                                                         }
-                                         }
-                                     ]
-                    },
-                    {
-                        "name":  "dsh-cloud-sync",
-                        "title":  {
-                                      "zh":  "云同步",
-                                      "en":  "Cloud Sync"
-                                  },
-                        "description":  {
-                                            "zh":  "把 DSH 的技能、插件、MCP 配置、全局指令与可选凭据备份到任意 WebDAV，并可按快照恢复。",
-                                            "en":  "Back up DSH skills, plugins, MCP config, AGENTS.md and optional credentials to any WebDAV, and restore from snapshots."
-                                        },
-                        "icon":  "https://raw.githubusercontent.com/doraasn/dsh-cloud-sync/main/icon.svg",
-                        "author":  "doraasn",
-                        "homepage":  "https://github.com/doraasn/dsh-cloud-sync",
-                        "repository":  {
-                                           "url":  "https://github.com/doraasn/dsh-cloud-sync"
-                                       },
-                        "metadata":  {
-                                         "category":  "backup",
-                                         "keywords":  [
-                                                          "webdav",
-                                                          "backup",
-                                                          "sync",
-                                                          "cloud"
-                                                      ],
-                                         "labels":  [
-                                                        "webdav",
-                                                        "no-deps"
-                                                    ],
-                                         "sortKeys":  {
-                                                          "added":  1792648064
-                                                      }
-                                     },
-                        "versions":  [
-                                         {
-                                             "version":  "0.1.0",
-                                             "publishTimestamp":  1792648064,
-                                             "source":  {
-                                                            "type":  "git",
-                                                            "url":  "https://github.com/doraasn/dsh-cloud-sync.git",
-                                                            "commit":  "24105c691911903b6faa0095be34f4a001b68077"
-                                                        },
-                                             "engines":  {
-                                                             "dsh":  "\u003e=0.2.1-0"
-                                                         }
-                                         }
-                                     ]
-                    },
-                    {
-                        "name":  "dsh-web-chat",
-                        "title":  {
-                                      "zh":  "网页会话",
-                                      "en":  "Web Chat"
-                                  },
-                        "description":  {
-                                            "zh":  "侧栏嵌入 chat.deepseek.com，切换面板不重载，记住上次会话并恢复登录状态。",
-                                            "en":  "Embed chat.deepseek.com in a sidebar panel, keep it alive across switches, remember the last conversation and restore the login snapshot."
-                                        },
-                        "icon":  "https://raw.githubusercontent.com/doraasn/dsh-web-chat/main/icon.svg",
-                        "author":  "doraasn",
-                        "homepage":  "https://github.com/doraasn/dsh-web-chat",
-                        "repository":  {
-                                           "url":  "https://github.com/doraasn/dsh-web-chat"
-                                       },
-                        "metadata":  {
-                                         "category":  "chat",
-                                         "keywords":  [
-                                                          "chat",
-                                                          "deepseek",
-                                                          "webview",
-                                                          "sidebar"
-                                                      ],
-                                         "labels":  [
-                                                        "sidebar"
-                                                    ],
-                                         "sortKeys":  {
-                                                          "added":  1792659600
-                                                      }
-                                     },
-                        "versions":  [
-                                         {
-                                             "version":  "1.0.0",
-                                             "publishTimestamp":  1792659600,
-                                             "source":  {
-                                                            "type":  "git",
-                                                            "url":  "https://github.com/doraasn/dsh-web-chat.git",
-                                                            "commit":  "88239f8275bd2b4a02dfd5c8557eb29f930a60fc"
-                                                        },
-                                             "engines":  {
-                                                             "dsh":  "\u003e=0.2.1-rc.2"
-                                                         }
-                                         }
-                                     ]
-                    },
-                    {
-                        "name":  "dsh-mobile-settings",
-                        "title":  {
-                                      "zh":  "移动访问设置",
-                                      "en":  "Mobile Access Settings"
-                                  },
-                        "description":  {
-                                            "zh":  "在设置里管理移动访问：局域网与远程连接的开关、端口与二维码入口。",
-                                            "en":  "Manage mobile access from settings: LAN and remote connection switches, ports and QR entry."
-                                        },
-                        "icon":  "https://raw.githubusercontent.com/doraasn/dsh-mobile-settings/main/icon.svg",
-                        "author":  "doraasn",
-                        "homepage":  "https://github.com/doraasn/dsh-mobile-settings",
-                        "repository":  {
-                                           "url":  "https://github.com/doraasn/dsh-mobile-settings"
-                                       },
-                        "metadata":  {
-                                         "category":  "settings",
-                                         "keywords":  [
-                                                          "mobile",
-                                                          "settings",
-                                                          "lan",
-                                                          "remote"
-                                                      ],
-                                         "labels":  [
-                                                        "no-deps"
-                                                    ],
-                                         "sortKeys":  {
-                                                          "added":  1792660072
-                                                      }
-                                     },
-                        "versions":  [
-                                         {
-                                             "version":  "0.1.0",
-                                             "publishTimestamp":  1792660072,
-                                             "source":  {
-                                                            "type":  "git",
-                                                            "url":  "https://github.com/doraasn/dsh-mobile-settings.git",
-                                                            "commit":  "d6cfd65c5dc012b19e52908b1e7fdc07daf271b6"
-                                                        },
-                                             "engines":  {
-                                                             "dsh":  "\u003e=0.2.1-rc.2"
-                                                         }
-                                         }
-                                     ]
-                    }
-                ]
+  "format": 1,
+  "title": {
+    "zh": "doraasn 的 DSH 插件",
+    "en": "doraasn's DSH plugins"
+  },
+  "description": {
+    "zh": "额度看板、云同步、网页会话、移动访问设置——都是我自己写给自己用的 DSH 插件。",
+    "en": "Quota board, cloud sync, web chat and mobile access settings — DSH plugins I built for my own daily use."
+  },
+  "metadata": {
+    "categories": {
+      "quota": {
+        "title": {
+          "zh": "额度与用量",
+          "en": "Quota & usage"
+        }
+      },
+      "backup": {
+        "title": {
+          "zh": "备份与同步",
+          "en": "Backup & sync"
+        }
+      },
+      "chat": {
+        "title": {
+          "zh": "会话与对话",
+          "en": "Chat"
+        }
+      },
+      "settings": {
+        "title": {
+          "zh": "设置增强",
+          "en": "Settings"
+        }
+      }
+    },
+    "labels": {
+      "codex": {
+        "title": {
+          "zh": "Codex",
+          "en": "Codex"
+        }
+      },
+      "sidebar": {
+        "title": {
+          "zh": "侧栏",
+          "en": "Sidebar"
+        }
+      },
+      "webdav": {
+        "title": {
+          "zh": "WebDAV",
+          "en": "WebDAV"
+        }
+      },
+      "no-deps": {
+        "title": {
+          "zh": "零依赖",
+          "en": "Zero dependency"
+        }
+      }
+    },
+    "sortKeys": {
+      "added": {
+        "title": {
+          "zh": "收录时间",
+          "en": "Added"
+        },
+        "order": "desc"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-cloud-sync",
+      "title": {
+        "zh": "云同步",
+        "en": "Cloud Sync"
+      },
+      "description": {
+        "zh": "把 DSH 的技能、插件、MCP 配置、全局指令与可选凭据备份到任意 WebDAV，并可按快照恢复。",
+        "en": "Back up DSH skills, plugins, MCP config, AGENTS.md and optional credentials to any WebDAV, and restore from snapshots."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-cloud-sync/main/icon.svg",
+      "author": "doraasn",
+      "homepage": "https://github.com/doraasn/dsh-cloud-sync",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-cloud-sync"
+      },
+      "metadata": {
+        "category": "backup",
+        "keywords": [
+          "webdav",
+          "backup",
+          "sync",
+          "cloud"
+        ],
+        "labels": [
+          "webdav",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1792648064
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1792654373,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-cloud-sync.git",
+            "commit": "7c98449c892c857d190422b8b6e594241ea83a99"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-quota-board",
+      "title": {
+        "zh": "额度看板",
+        "en": "Quota Board"
+      },
+      "description": {
+        "zh": "侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。",
+        "en": "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
+      "author": "doraasn",
+      "homepage": "https://github.com/doraasn/dsh-quota-board",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-quota-board"
+      },
+      "metadata": {
+        "category": "quota",
+        "keywords": [
+          "quota",
+          "balance",
+          "codex",
+          "sidebar",
+          "deepseek",
+          "zai"
+        ],
+        "labels": [
+          "codex",
+          "sidebar",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1792659600
+        }
+      },
+      "versions": [
+        {
+          "version": "0.11.2",
+          "publishTimestamp": 1792985851,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-quota-board.git",
+            "commit": "4c6412d237bafa5dabed1252513160a044452fb4"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    }
+  ]
 }
