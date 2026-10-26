@@ -93,6 +93,34 @@ async function api(path_) {
   return response.json()
 }
 
+/** 读某个提交里的文本文件；不存在返回 null。 */
+async function fileAt(repo, path_, ref) {
+  try {
+    const file = await api(`/repos/${repo}/contents/${path_}?ref=${ref}`)
+    return Buffer.from(file.content, 'base64').toString('utf8')
+  } catch {
+    return null
+  }
+}
+
+/**
+ * 校验发布身份三处一致：package name、cordis.patch.yml 的 name、client bundle 注册的 id。
+ * 任何一处不一致都会让 DSH 启动时报 duplicate factory registration，因此宁可不收录。
+ */
+async function identityOf(repo, ref) {
+  const pkgText = await fileAt(repo, 'package.json', ref)
+  if (!pkgText) return { ok: false, reason: '没有 package.json' }
+  const pkgName = JSON.parse(pkgText).name
+  const patchText = (await fileAt(repo, 'cordis.patch.yml', ref)) || ''
+  const clientText = (await fileAt(repo, 'lib/client.js', ref)) || (await fileAt(repo, 'client.js', ref)) || ''
+  const patchName = (patchText.match(/name:\s*['"]?([^'"\s]+)['"]?/) || [])[1] || ''
+  const clientId = (clientText.match(/id:\s*['"]([^'"]+)['"]/) || [])[1] || ''
+  if (pkgName !== patchName || pkgName !== clientId) {
+    return { ok: false, reason: `身份不一致 package=${pkgName} patch=${patchName} client=${clientId}` }
+  }
+  return { ok: true }
+}
+
 /** 版本比较（只处理 x.y.z）。 */
 function compareVersion(a, b) {
   const pa = a.split('.').map(Number)
@@ -135,6 +163,11 @@ async function buildEntry(config) {
   const latest = await latestVersion(config.repo)
   if (!latest) {
     console.log(`  跳过 ${config.repo}（没有 vX.Y.Z tag）`)
+    return null
+  }
+  const identity = await identityOf(config.repo, latest.sha)
+  if (!identity.ok) {
+    console.log(`  跳过 ${config.repo}（${identity.reason}）`)
     return null
   }
   const pkgFile = await api(`/repos/${config.repo}/contents/package.json?ref=${latest.sha}`)
