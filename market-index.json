@@ -196,12 +196,12 @@
       },
       "versions": [
         {
-          "version": "0.11.5",
-          "publishTimestamp": 1793000768,
+          "version": "0.11.6",
+          "publishTimestamp": 1793008734,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "5c1986b6ee3ecfbaee7724fb54c6775d9a3ed674"
+            "commit": "3ba53cdde538f21821bd67057a3f4c5231daff66"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -243,11 +243,11 @@
       "versions": [
         {
           "version": "1.0.5",
-          "publishTimestamp": 1792993310,
+          "publishTimestamp": 1793007208,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "371fb6b64cc74d116a7f7d34bf37238bbec105e7"
+            "commit": "6e863596a039782d1a1c133166be5299c2702323"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
