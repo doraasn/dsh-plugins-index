@@ -1,0 +1,41 @@
+name: update-market-index
+
+on:
+  # 手动触发
+  workflow_dispatch:
+  # 每天 03:00 UTC（北京时间 11:00）兜底跑一次
+  schedule:
+    - cron: '0 3 * * *'
+  # 别的仓库发版后可以用 repository_dispatch 通知
+  repository_dispatch:
+    types: [plugin-release]
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebuild market-index.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build-index.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- market-index.json; then
+            echo "索引无变化，跳过提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add market-index.json
+          git commit -m "chore: 自动更新插件市场索引"
+          git push
