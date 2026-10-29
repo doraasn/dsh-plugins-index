@@ -145,9 +145,20 @@ function compareVersion(a, b) {
   return 0
 }
 
+/** 默认分支 HEAD 及其 package.json 里的版本号。 */
+async function headVersion(repo) {
+  const repoInfo = await api(`/repos/${repo}`)
+  const branch = repoInfo.default_branch || 'main'
+  const head = await api(`/repos/${repo}/commits/${branch}`)
+  const pkgFile = await api(`/repos/${repo}/contents/package.json?ref=${head.sha}`)
+  const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
+  return { version: pkg.version, sha: head.sha, publishedAt: head.commit?.committer?.date, fromTag: false }
+}
+
 /**
- * 取最新版本：优先用 vX.Y.Z tag；没有 tag 的仓库退回默认分支 HEAD，
- * 版本号读该提交里的 package.json。
+ * 取最新版本：优先 vX.Y.Z tag；没有 tag 的仓库退回默认分支 HEAD。
+ * 默认分支的 package.json 版本比最新 tag 还新时也用 HEAD —— 否则发了版忘了打 tag
+ * 的仓库会一直停在旧版本（v0.1.0 tag 盖住 main 上的 0.2.0）。
  */
 async function latestVersion(repo) {
   const tags = await api(`/repos/${repo}/tags?per_page=100`)
@@ -157,20 +168,25 @@ async function latestVersion(repo) {
     .map((name) => name.slice(1))
     .sort(compareVersion)
 
-  if (versions.length) {
-    const version = versions[versions.length - 1]
-    const tagName = `v${version}`
-    const commit = await api(`/repos/${repo}/commits/${tagName}`)
-    return { version, sha: commit.sha, publishedAt: commit.commit?.committer?.date, fromTag: true }
+  let head = null
+  try {
+    head = await headVersion(repo)
+  } catch (error) {
+    console.log(`  ${repo} 读默认分支失败，退回 tag：${error.message}`)
   }
 
-  // 没有 tag：用默认分支 HEAD，版本号从 package.json 读。
-  const repoInfo = await api(`/repos/${repo}`)
-  const branch = repoInfo.default_branch || 'main'
-  const head = await api(`/repos/${repo}/commits/${branch}`)
-  const pkgFile = await api(`/repos/${repo}/contents/package.json?ref=${head.sha}`)
-  const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
-  return { version: pkg.version, sha: head.sha, publishedAt: head.commit?.committer?.date, fromTag: false }
+  if (!versions.length) {
+    return head
+  }
+
+  const tagVersion = versions[versions.length - 1]
+  if (head && compareVersion(head.version, tagVersion) > 0) {
+    return head
+  }
+
+  const tagName = `v${tagVersion}`
+  const commit = await api(`/repos/${repo}/commits/${tagName}`)
+  return { version: tagVersion, sha: commit.sha, publishedAt: commit.commit?.committer?.date, fromTag: true }
 }
 
 async function buildEntry(config) {
