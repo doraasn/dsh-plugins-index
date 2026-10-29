@@ -55,9 +55,9 @@ const PLUGINS = [
   },
   {
     repo: 'doraasn/dsh-sidebar-compact',
-    title: { zh: '更多收纳', en: 'Sidebar Compact' },
+    title: { zh: '侧栏收纳', en: 'Sidebar Compact' },
     description: {
-      zh: '侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 更多收纳 里逐个勾选。',
+      zh: '侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 侧栏收纳 里逐个勾选。',
       en: 'Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose per panel in Settings.',
     },
     category: 'ui',
@@ -257,7 +257,7 @@ const doc = {
   format: 1,
   title: { zh: 'doraasn 的 DSH 插件', en: "doraasn's DSH plugins" },
   description: {
-    zh: '额度看板、云同步、网页会话、移动访问设置、更多收纳——都是我自己写给自己用的 DSH 插件。',
+    zh: '额度看板、云同步、网页会话、移动访问设置、侧栏收纳——都是我自己写给自己用的 DSH 插件。',
     en: 'Quota board, cloud sync, web chat, mobile access settings and sidebar compact — DSH plugins I built for my own daily use.',
   },
   metadata: {

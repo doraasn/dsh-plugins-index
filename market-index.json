@@ -5,7 +5,7 @@
     "en": "doraasn's DSH plugins"
   },
   "description": {
-    "zh": "额度看板、云同步、网页会话、移动访问设置、更多收纳——都是我自己写给自己用的 DSH 插件。",
+    "zh": "额度看板、云同步、网页会话、移动访问设置、侧栏收纳——都是我自己写给自己用的 DSH 插件。",
     "en": "Quota board, cloud sync, web chat, mobile access settings and sidebar compact — DSH plugins I built for my own daily use."
   },
   "metadata": {
@@ -123,49 +123,6 @@
       ]
     },
     {
-      "name": "dsh-mobile-settings",
-      "title": {
-        "zh": "移动访问设置",
-        "en": "Mobile Access Settings"
-      },
-      "description": {
-        "zh": "在设置里管理移动访问：局域网与远程连接的开关、端口与二维码入口。",
-        "en": "Manage mobile access from settings: LAN and remote connection switches, ports and QR entry."
-      },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-mobile-settings/main/icon.svg",
-      "author": "doraasn",
-      "homepage": "https://github.com/doraasn/dsh-mobile-settings",
-      "repository": {
-        "url": "https://github.com/doraasn/dsh-mobile-settings"
-      },
-      "metadata": {
-        "category": "settings",
-        "keywords": [
-          "mobile",
-          "settings",
-          "lan",
-          "remote"
-        ],
-        "labels": [
-          "no-deps"
-        ],
-        "sortKeys": {
-          "added": 1792659600
-        }
-      },
-      "versions": [
-        {
-          "version": "0.1.0",
-          "publishTimestamp": 1792660009,
-          "source": {
-            "type": "git",
-            "url": "https://github.com/doraasn/dsh-mobile-settings.git",
-            "commit": "d6cfd65c5dc012b19e52908b1e7fdc07daf271b6"
-          }
-        }
-      ]
-    },
-    {
       "name": "dsh-quota-board",
       "title": {
         "zh": "额度看板",
@@ -208,54 +165,6 @@
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
             "commit": "3ba53cdde538f21821bd67057a3f4c5231daff66"
-          },
-          "engines": {
-            "dsh": ">=0.2.1-rc.2"
-          }
-        }
-      ]
-    },
-    {
-      "name": "dsh-sidebar-compact",
-      "title": {
-        "zh": "更多收纳",
-        "en": "Sidebar Compact"
-      },
-      "description": {
-        "zh": "侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 更多收纳 里逐个勾选。",
-        "en": "Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose per panel in Settings."
-      },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-sidebar-compact/main/icon.svg",
-      "author": "doraasn",
-      "homepage": "https://github.com/doraasn/dsh-sidebar-compact",
-      "repository": {
-        "url": "https://github.com/doraasn/dsh-sidebar-compact"
-      },
-      "metadata": {
-        "category": "ui",
-        "keywords": [
-          "sidebar",
-          "layout",
-          "more-menu",
-          "compact",
-          "panels"
-        ],
-        "labels": [
-          "sidebar",
-          "no-deps"
-        ],
-        "sortKeys": {
-          "added": 1793340000
-        }
-      },
-      "versions": [
-        {
-          "version": "0.1.1",
-          "publishTimestamp": 1793277315,
-          "source": {
-            "type": "git",
-            "url": "https://github.com/doraasn/dsh-sidebar-compact.git",
-            "commit": "0bc6e0aa6555d4ad01de015dbd0ade65f148c358"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
