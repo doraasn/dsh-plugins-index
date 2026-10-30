@@ -85,6 +85,56 @@
   },
   "plugins": [
     {
+      "name": "@local/dsh-quota-panel",
+      "title": {
+        "zh": "额度看板",
+        "en": "Quota Board"
+      },
+      "description": {
+        "zh": "侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。",
+        "en": "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
+      "author": "doraasn",
+      "homepage": "https://github.com/doraasn/dsh-quota-board",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-quota-board"
+      },
+      "metadata": {
+        "category": "quota",
+        "keywords": [
+          "quota",
+          "balance",
+          "codex",
+          "sidebar",
+          "deepseek",
+          "zai"
+        ],
+        "labels": [
+          "codex",
+          "sidebar",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1792659600
+        }
+      },
+      "versions": [
+        {
+          "version": "0.11.7",
+          "publishTimestamp": 1793326416,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-quota-board.git",
+            "commit": "0005e84ee4776e5f5aa478ab409d0b825951f133"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    },
+    {
       "name": "dsh-cloud-sync",
       "title": {
         "zh": "云同步",
@@ -118,12 +168,12 @@
       },
       "versions": [
         {
-          "version": "0.2.0",
-          "publishTimestamp": 1793265931,
+          "version": "0.2.1",
+          "publishTimestamp": 1793326377,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-cloud-sync.git",
-            "commit": "157760e3092437b47de2c9a447642ac517d89cac"
+            "commit": "2db87feabf941205c4dcf4fbfe655e825ceae1b1"
           }
         }
       ]
@@ -161,62 +211,12 @@
       },
       "versions": [
         {
-          "version": "0.1.0",
-          "publishTimestamp": 1793324936,
+          "version": "0.1.1",
+          "publishTimestamp": 1793326419,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-settings.git",
-            "commit": "2ce38b3c60f807acdfa4bc83ee4ff5c804044892"
-          }
-        }
-      ]
-    },
-    {
-      "name": "dsh-quota-board",
-      "title": {
-        "zh": "额度看板",
-        "en": "Quota Board"
-      },
-      "description": {
-        "zh": "侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。",
-        "en": "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
-      },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
-      "author": "doraasn",
-      "homepage": "https://github.com/doraasn/dsh-quota-board",
-      "repository": {
-        "url": "https://github.com/doraasn/dsh-quota-board"
-      },
-      "metadata": {
-        "category": "quota",
-        "keywords": [
-          "quota",
-          "balance",
-          "codex",
-          "sidebar",
-          "deepseek",
-          "zai"
-        ],
-        "labels": [
-          "codex",
-          "sidebar",
-          "no-deps"
-        ],
-        "sortKeys": {
-          "added": 1792659600
-        }
-      },
-      "versions": [
-        {
-          "version": "0.11.6",
-          "publishTimestamp": 1793008734,
-          "source": {
-            "type": "git",
-            "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "3ba53cdde538f21821bd67057a3f4c5231daff66"
-          },
-          "engines": {
-            "dsh": ">=0.2.1-rc.2"
+            "commit": "6dfb7dce7157549c783da8cc36daa4aaba9d6e85"
           }
         }
       ]
@@ -256,12 +256,12 @@
       },
       "versions": [
         {
-          "version": "0.1.2",
-          "publishTimestamp": 1793277529,
+          "version": "0.1.3",
+          "publishTimestamp": 1793326383,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-sidebar-compact.git",
-            "commit": "be67f54e9846661936daa7ebc447b0992c1f3fdb"
+            "commit": "dd3a381f350c3a6e755eb62dc22d69e82a86ac64"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -302,12 +302,12 @@
       },
       "versions": [
         {
-          "version": "1.0.5",
-          "publishTimestamp": 1793324907,
+          "version": "1.0.6",
+          "publishTimestamp": 1793326380,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "6ebd1ce59800cf001b303899b1099a8789df29de"
+            "commit": "d8b17b25d6f0f1d4bc32da4bb0c4a53247e38c5e"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
