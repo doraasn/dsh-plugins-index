@@ -85,56 +85,6 @@
   },
   "plugins": [
     {
-      "name": "@local/dsh-quota-panel",
-      "title": {
-        "zh": "额度看板",
-        "en": "Quota Board"
-      },
-      "description": {
-        "zh": "侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。",
-        "en": "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
-      },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
-      "author": "doraasn",
-      "homepage": "https://github.com/doraasn/dsh-quota-board",
-      "repository": {
-        "url": "https://github.com/doraasn/dsh-quota-board"
-      },
-      "metadata": {
-        "category": "quota",
-        "keywords": [
-          "quota",
-          "balance",
-          "codex",
-          "sidebar",
-          "deepseek",
-          "zai"
-        ],
-        "labels": [
-          "codex",
-          "sidebar",
-          "no-deps"
-        ],
-        "sortKeys": {
-          "added": 1792659600
-        }
-      },
-      "versions": [
-        {
-          "version": "0.11.7",
-          "publishTimestamp": 1793326416,
-          "source": {
-            "type": "git",
-            "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "0005e84ee4776e5f5aa478ab409d0b825951f133"
-          },
-          "engines": {
-            "dsh": ">=0.2.1-rc.2"
-          }
-        }
-      ]
-    },
-    {
       "name": "dsh-cloud-sync",
       "title": {
         "zh": "云同步",
@@ -217,6 +167,56 @@
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-settings.git",
             "commit": "6dfb7dce7157549c783da8cc36daa4aaba9d6e85"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-quota-board",
+      "title": {
+        "zh": "额度看板",
+        "en": "Quota Board"
+      },
+      "description": {
+        "zh": "侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数，以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。",
+        "en": "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
+      "author": "doraasn",
+      "homepage": "https://github.com/doraasn/dsh-quota-board",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-quota-board"
+      },
+      "metadata": {
+        "category": "quota",
+        "keywords": [
+          "quota",
+          "balance",
+          "codex",
+          "sidebar",
+          "deepseek",
+          "zai"
+        ],
+        "labels": [
+          "codex",
+          "sidebar",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1792659600
+        }
+      },
+      "versions": [
+        {
+          "version": "0.11.7",
+          "publishTimestamp": 1793326703,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-quota-board.git",
+            "commit": "313b2edec4f94401636c7926e6a4e8dfd2312219"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
           }
         }
       ]
