@@ -65,6 +65,12 @@
           "zh": "零依赖",
           "en": "Zero dependency"
         }
+      },
+      "needs-mobile": {
+        "title": {
+          "zh": "需 dsh-mobile",
+          "en": "Needs dsh-mobile"
+        }
       }
     },
     "sortKeys": {
@@ -129,8 +135,8 @@
         "en": "Mobile Access Settings"
       },
       "description": {
-        "zh": "在设置里管理移动访问：局域网与远程连接的开关、端口与二维码入口。",
-        "en": "Manage mobile access from settings: LAN and remote connection switches, ports and QR entry."
+        "zh": "把 dsh-mobile 的「移动访问」入口从侧栏收进设置页，功能仍由 dsh-mobile 提供（需先安装并启用它）。",
+        "en": "Move the dsh-mobile \"Mobile access\" entry from the sidebar into Settings. The feature itself comes from dsh-mobile, which must be installed first."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-mobile-settings/main/icon.svg",
       "author": "doraasn",
@@ -147,7 +153,7 @@
           "remote"
         ],
         "labels": [
-          "no-deps"
+          "needs-mobile"
         ],
         "sortKeys": {
           "added": 1792659600
@@ -156,11 +162,11 @@
       "versions": [
         {
           "version": "0.1.0",
-          "publishTimestamp": 1792660009,
+          "publishTimestamp": 1793324936,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-settings.git",
-            "commit": "d6cfd65c5dc012b19e52908b1e7fdc07daf271b6"
+            "commit": "2ce38b3c60f807acdfa4bc83ee4ff5c804044892"
           }
         }
       ]
@@ -297,11 +303,11 @@
       "versions": [
         {
           "version": "1.0.5",
-          "publishTimestamp": 1793007208,
+          "publishTimestamp": 1793324907,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "6e863596a039782d1a1c133166be5299c2702323"
+            "commit": "6ebd1ce59800cf001b303899b1099a8789df29de"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
