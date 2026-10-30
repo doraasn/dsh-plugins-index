@@ -69,11 +69,11 @@ const PLUGINS = [
     repo: 'doraasn/dsh-mobile-settings',
     title: { zh: '移动访问设置', en: 'Mobile Access Settings' },
     description: {
-      zh: '在设置里管理移动访问：局域网与远程连接的开关、端口与二维码入口。',
-      en: 'Manage mobile access from settings: LAN and remote connection switches, ports and QR entry.',
+      zh: '把 dsh-mobile 的「移动访问」入口从侧栏收进设置页，功能仍由 dsh-mobile 提供（需先安装并启用它）。',
+      en: 'Move the dsh-mobile "Mobile access" entry from the sidebar into Settings. The feature itself comes from dsh-mobile, which must be installed first.',
     },
     category: 'settings',
-    labels: ['no-deps'],
+    labels: ['needs-mobile'],
     keywords: ['mobile', 'settings', 'lan', 'remote'],
     added: 1792659600,
   },
@@ -92,6 +92,7 @@ const LABELS = {
   sidebar: { title: { zh: '侧栏', en: 'Sidebar' } },
   webdav: { title: { zh: 'WebDAV', en: 'WebDAV' } },
   'no-deps': { title: { zh: '零依赖', en: 'Zero dependency' } },
+  'needs-mobile': { title: { zh: '需 dsh-mobile', en: 'Needs dsh-mobile' } },
 }
 
 async function api(path_) {
