@@ -118,12 +118,12 @@
       },
       "versions": [
         {
-          "version": "0.2.1",
-          "publishTimestamp": 1793326377,
+          "version": "0.3.0",
+          "publishTimestamp": 1793601554,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-cloud-sync.git",
-            "commit": "2db87feabf941205c4dcf4fbfe655e825ceae1b1"
+            "commit": "a327047311f07465c762ce14b4949dbf13a67e69"
           }
         }
       ]
