@@ -15,6 +15,13 @@ const API = 'https://api.github.com'
 const OUT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..', 'market-index.json')
 const DRY = process.argv.includes('--dry-run')
 
+/**
+ * 索引里的作者署名。索引格式 1 的 author 是单个字符串，
+ * 所以多作者用「、」拼接；某个插件单独有别的作者时，
+ * 在该插件配置里加 authors 数组覆盖即可。
+ */
+const AUTHORS = ['Y77H']
+
 /** 每个插件的展示信息（仓库名 -> 索引条目元数据）。新增插件在这里加一项即可。 */
 const PLUGINS = [
   {
@@ -235,7 +242,7 @@ async function buildEntry(config) {
     title: config.title,
     description: config.description,
     icon: `https://raw.githubusercontent.com/${config.repo}/main/icon.svg`,
-    author: 'doraasn',
+    author: (config.authors ?? AUTHORS).join('、'),
     homepage: `https://github.com/${config.repo}`,
     repository: { url: `https://github.com/${config.repo}` },
     metadata: {
@@ -268,10 +275,10 @@ entries.sort((left, right) => left.name.localeCompare(right.name))
 
 const doc = {
   format: 1,
-  title: { zh: 'doraasn 的 DSH 插件', en: "doraasn's DSH plugins" },
+  title: { zh: '插件盒子', en: 'Plugin Box' },
   description: {
-    zh: '额度看板、云同步、网页会话、移动访问设置、侧栏收纳、会话概览——都是我自己写给自己用的 DSH 插件。',
-    en: 'Quota board, cloud sync, web chat, mobile access settings, sidebar compact and session overview — DSH plugins I built for my own daily use.',
+    zh: '小插件盒子',
+    en: 'A small plugin box.',
   },
   metadata: {
     categories: CATEGORIES,

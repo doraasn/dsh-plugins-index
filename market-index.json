@@ -1,12 +1,12 @@
 {
   "format": 1,
   "title": {
-    "zh": "doraasn 的 DSH 插件",
-    "en": "doraasn's DSH plugins"
+    "zh": "插件盒子",
+    "en": "Plugin Box"
   },
   "description": {
-    "zh": "额度看板、云同步、网页会话、移动访问设置、侧栏收纳、会话概览——都是我自己写给自己用的 DSH 插件。",
-    "en": "Quota board, cloud sync, web chat, mobile access settings, sidebar compact and session overview — DSH plugins I built for my own daily use."
+    "zh": "小插件盒子",
+    "en": "A small plugin box."
   },
   "metadata": {
     "categories": {
@@ -95,7 +95,7 @@
         "en": "Back up DSH skills, plugins, MCP config, AGENTS.md and optional credentials to any WebDAV, and restore from snapshots."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-cloud-sync/main/icon.svg",
-      "author": "doraasn",
+      "author": "Y77H",
       "homepage": "https://github.com/doraasn/dsh-cloud-sync",
       "repository": {
         "url": "https://github.com/doraasn/dsh-cloud-sync"
@@ -139,7 +139,7 @@
         "en": "Move the dsh-mobile \"Mobile access\" entry from the sidebar into Settings. The feature itself comes from dsh-mobile, which must be installed first."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-mobile-settings/main/icon.svg",
-      "author": "doraasn",
+      "author": "Y77H",
       "homepage": "https://github.com/doraasn/dsh-mobile-settings",
       "repository": {
         "url": "https://github.com/doraasn/dsh-mobile-settings"
@@ -182,7 +182,7 @@
         "en": "Sidebar cards for Codex 5-hour and weekly limits plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-quota-board/main/icon.svg",
-      "author": "doraasn",
+      "author": "Y77H",
       "homepage": "https://github.com/doraasn/dsh-quota-board",
       "repository": {
         "url": "https://github.com/doraasn/dsh-quota-board"
@@ -232,7 +232,7 @@
         "en": "On hovering a session in the sidebar, show when it was created, when it ended, which models it used and the total tokens, with input / output / cache-hit details."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-session-meta/main/icon.svg",
-      "author": "doraasn",
+      "author": "Y77H",
       "homepage": "https://github.com/doraasn/dsh-session-meta",
       "repository": {
         "url": "https://github.com/doraasn/dsh-session-meta"
@@ -281,7 +281,7 @@
         "en": "Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose per panel in Settings."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-sidebar-compact/main/icon.svg",
-      "author": "doraasn",
+      "author": "Y77H",
       "homepage": "https://github.com/doraasn/dsh-sidebar-compact",
       "repository": {
         "url": "https://github.com/doraasn/dsh-sidebar-compact"
@@ -329,7 +329,7 @@
         "en": "Embed chat.deepseek.com in a sidebar panel, keep it alive across switches, remember the last conversation and restore the login snapshot."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-web-chat/main/icon.svg",
-      "author": "doraasn",
+      "author": "Y77H",
       "homepage": "https://github.com/doraasn/dsh-web-chat",
       "repository": {
         "url": "https://github.com/doraasn/dsh-web-chat"
