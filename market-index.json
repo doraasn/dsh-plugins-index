@@ -5,8 +5,8 @@
     "en": "doraasn's DSH plugins"
   },
   "description": {
-    "zh": "额度看板、云同步、网页会话、移动访问设置、侧栏收纳——都是我自己写给自己用的 DSH 插件。",
-    "en": "Quota board, cloud sync, web chat, mobile access settings and sidebar compact — DSH plugins I built for my own daily use."
+    "zh": "额度看板、云同步、网页会话、移动访问设置、侧栏收纳、会话概览——都是我自己写给自己用的 DSH 插件。",
+    "en": "Quota board, cloud sync, web chat, mobile access settings, sidebar compact and session overview — DSH plugins I built for my own daily use."
   },
   "metadata": {
     "categories": {
@@ -214,6 +214,55 @@
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
             "commit": "313b2edec4f94401636c7926e6a4e8dfd2312219"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-session-meta",
+      "title": {
+        "zh": "会话概览",
+        "en": "Session Overview"
+      },
+      "description": {
+        "zh": "鼠标悬停侧栏会话时，在悬浮卡里显示该会话的创建时间、结束时间、涉及几个模型与累计消耗的 token（含输入 / 输出 / 缓存命中明细）。",
+        "en": "On hovering a session in the sidebar, show when it was created, when it ended, which models it used and the total tokens, with input / output / cache-hit details."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-session-meta/main/icon.svg",
+      "author": "doraasn",
+      "homepage": "https://github.com/doraasn/dsh-session-meta",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-session-meta"
+      },
+      "metadata": {
+        "category": "chat",
+        "keywords": [
+          "session",
+          "tokens",
+          "models",
+          "usage",
+          "hover",
+          "sidebar"
+        ],
+        "labels": [
+          "sidebar",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1793697568
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1793668724,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-session-meta.git",
+            "commit": "ade9563a6dd846a35db06f81c0d5ed4be965b2c5"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"

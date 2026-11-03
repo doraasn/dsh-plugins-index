@@ -77,6 +77,18 @@ const PLUGINS = [
     keywords: ['mobile', 'settings', 'lan', 'remote'],
     added: 1792659600,
   },
+  {
+    repo: 'doraasn/dsh-session-meta',
+    title: { zh: '会话概览', en: 'Session Overview' },
+    description: {
+      zh: '鼠标悬停侧栏会话时，在悬浮卡里显示该会话的创建时间、结束时间、涉及几个模型与累计消耗的 token（含输入 / 输出 / 缓存命中明细）。',
+      en: 'On hovering a session in the sidebar, show when it was created, when it ended, which models it used and the total tokens, with input / output / cache-hit details.',
+    },
+    category: 'chat',
+    labels: ['sidebar', 'no-deps'],
+    keywords: ['session', 'tokens', 'models', 'usage', 'hover', 'sidebar'],
+    added: 1793697568,
+  },
 ]
 
 const CATEGORIES = {
@@ -258,8 +270,8 @@ const doc = {
   format: 1,
   title: { zh: 'doraasn 的 DSH 插件', en: "doraasn's DSH plugins" },
   description: {
-    zh: '额度看板、云同步、网页会话、移动访问设置、侧栏收纳——都是我自己写给自己用的 DSH 插件。',
-    en: 'Quota board, cloud sync, web chat, mobile access settings and sidebar compact — DSH plugins I built for my own daily use.',
+    zh: '额度看板、云同步、网页会话、移动访问设置、侧栏收纳、会话概览——都是我自己写给自己用的 DSH 插件。',
+    en: 'Quota board, cloud sync, web chat, mobile access settings, sidebar compact and session overview — DSH plugins I built for my own daily use.',
   },
   metadata: {
     categories: CATEGORIES,
