@@ -34,6 +34,12 @@
           "en": "Chat"
         }
       },
+      "monitor": {
+        "title": {
+          "zh": "监控与观测",
+          "en": "Monitoring"
+        }
+      },
       "settings": {
         "title": {
           "zh": "设置增强",
@@ -311,6 +317,54 @@
             "type": "git",
             "url": "https://github.com/doraasn/dsh-sidebar-compact.git",
             "commit": "dd3a381f350c3a6e755eb62dc22d69e82a86ac64"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-speed-monitor",
+      "title": {
+        "zh": "速度监控",
+        "en": "Speed Monitor"
+      },
+      "description": {
+        "zh": "每 5 分钟采样一次 OpenAI 兼容中转的流式速度，侧栏卡片看首字延迟与总耗时，设置页看曲线。",
+        "en": "Sample the streaming speed of an OpenAI-compatible relay every 5 minutes: first-token latency and total time in a sidebar card, plus curves in Settings."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-speed-monitor/main/icon.svg",
+      "author": "Y77H",
+      "homepage": "https://github.com/doraasn/dsh-speed-monitor",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-speed-monitor"
+      },
+      "metadata": {
+        "category": "monitor",
+        "keywords": [
+          "speed",
+          "latency",
+          "stream",
+          "monitor",
+          "sidebar"
+        ],
+        "labels": [
+          "sidebar",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1793760255
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1793760028,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-speed-monitor.git",
+            "commit": "47ddf57293e8a7d42c0801a726d1a699b515ecd6"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
