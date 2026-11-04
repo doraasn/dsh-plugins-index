@@ -96,6 +96,18 @@ const PLUGINS = [
     keywords: ['session', 'tokens', 'models', 'usage', 'hover', 'sidebar'],
     added: 1793697568,
   },
+  {
+    repo: 'doraasn/dsh-speed-monitor',
+    title: { zh: '速度监控', en: 'Speed Monitor' },
+    description: {
+      zh: '每 5 分钟采样一次 OpenAI 兼容中转的流式速度，侧栏卡片看首字延迟与总耗时，设置页看曲线。',
+      en: 'Sample the streaming speed of an OpenAI-compatible relay every 5 minutes: first-token latency and total time in a sidebar card, plus curves in Settings.',
+    },
+    category: 'monitor',
+    labels: ['sidebar', 'no-deps'],
+    keywords: ['speed', 'latency', 'stream', 'monitor', 'sidebar'],
+    added: 1793760255,
+  },
 ]
 
 const CATEGORIES = {
@@ -103,6 +115,7 @@ const CATEGORIES = {
   ui: { title: { zh: '界面与侧栏', en: 'Layout & sidebar' } },
   backup: { title: { zh: '备份与同步', en: 'Backup & sync' } },
   chat: { title: { zh: '会话与对话', en: 'Chat' } },
+  monitor: { title: { zh: '监控与观测', en: 'Monitoring' } },
   settings: { title: { zh: '设置增强', en: 'Settings' } },
 }
 
