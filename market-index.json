@@ -277,7 +277,7 @@
       ]
     },
     {
-      "name": "dsh-side-chat",
+      "name": "dsh-side-chat-panel",
       "title": {
         "zh": "侧边会话",
         "en": "Side Chat"
@@ -315,9 +315,11 @@
       "versions": [
         {
           "version": "0.1.0",
-          "publishTimestamp": 1793787467,
+          "publishTimestamp": 1793787929,
           "source": {
-            "type": "npm"
+            "type": "git",
+            "url": "https://github.com/doraasn/dsh-side-chat.git",
+            "commit": "8502e679a5d75b12a69456a67d1fe5c487f1963c"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
