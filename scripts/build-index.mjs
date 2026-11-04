@@ -100,8 +100,8 @@ const PLUGINS = [
     repo: 'doraasn/dsh-speed-monitor',
     title: { zh: '速度监控', en: 'Speed Monitor' },
     description: {
-      zh: '侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度，默认每分钟一轮，支持多个模型并列对比、曲线按模型分色。',
-      en: 'A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list, one round per minute by default, with multiple models side by side and per-model colored curves.',
+      zh: '侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度，默认每分钟一轮；首字节、总耗时与吞吐合成一张双轴折线，每个模型一种颜色。',
+      en: 'A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list, once a minute by default; first-byte, total time and throughput share one dual-axis chart, one color per model.',
     },
     category: 'monitor',
     labels: ['sidebar', 'no-deps'],
