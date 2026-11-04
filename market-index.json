@@ -277,6 +277,55 @@
       ]
     },
     {
+      "name": "dsh-side-chat",
+      "title": {
+        "zh": "侧边会话",
+        "en": "Side Chat"
+      },
+      "description": {
+        "zh": "Ctrl+Alt+S 把当前会话分叉到右栏，继承已完成的上下文，边聊边看主线；关掉标签即归档，可随时恢复。",
+        "en": "Ctrl+Alt+S forks the current session into a right-hand chat that inherits the completed context and runs beside the main thread; closing the tab archives it, restorable at any time."
+      },
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-side-chat/main/icon.svg",
+      "author": "Y77H",
+      "homepage": "https://github.com/doraasn/dsh-side-chat",
+      "repository": {
+        "url": "https://github.com/doraasn/dsh-side-chat"
+      },
+      "metadata": {
+        "category": "chat",
+        "keywords": [
+          "side",
+          "chat",
+          "fork",
+          "branch",
+          "sidebar",
+          "context",
+          "shortcut",
+          "archive"
+        ],
+        "labels": [
+          "sidebar",
+          "no-deps"
+        ],
+        "sortKeys": {
+          "added": 1793778000
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1793787467,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    },
+    {
       "name": "dsh-sidebar-compact",
       "title": {
         "zh": "侧栏收纳",
