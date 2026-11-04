@@ -314,12 +314,12 @@
       },
       "versions": [
         {
-          "version": "0.1.1",
-          "publishTimestamp": 1793790635,
+          "version": "0.1.2",
+          "publishTimestamp": 1793791372,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-side-chat.git",
-            "commit": "aeb351cec934a19ff1eb673dc98c2635890fb6bb"
+            "commit": "85d50e34211c5f43c995f0d3c3ca31d8a474c6d2"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -413,12 +413,12 @@
       },
       "versions": [
         {
-          "version": "0.5.2",
-          "publishTimestamp": 1793786608,
+          "version": "0.5.3",
+          "publishTimestamp": 1793790859,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-speed-monitor.git",
-            "commit": "bb01d8582b0c571a002d80908f19fdfb98105e1e"
+            "commit": "078a4791158759e34a16a5e0677386bf829720ff"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
