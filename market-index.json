@@ -331,8 +331,8 @@
         "en": "Speed Monitor"
       },
       "description": {
-        "zh": "每 5 分钟采样一次 OpenAI 兼容中转的流式速度，侧栏卡片看首字延迟与总耗时，设置页看曲线。",
-        "en": "Sample the streaming speed of an OpenAI-compatible relay every 5 minutes: first-token latency and total time in a sidebar card, plus curves in Settings."
+        "zh": "侧栏入口点开右侧面板，显示每 5 分钟采样的中转流式速度曲线（首字延迟与总耗时）。",
+        "en": "A sidebar entry opens a right-hand panel with streaming-speed curves sampled every 5 minutes from an OpenAI-compatible relay."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-speed-monitor/main/icon.svg",
       "author": "Y77H",
@@ -347,7 +347,8 @@
           "latency",
           "stream",
           "monitor",
-          "sidebar"
+          "sidebar",
+          "panel"
         ],
         "labels": [
           "sidebar",
@@ -359,12 +360,12 @@
       },
       "versions": [
         {
-          "version": "0.1.0",
-          "publishTimestamp": 1793760028,
+          "version": "0.2.0",
+          "publishTimestamp": 1793762191,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-speed-monitor.git",
-            "commit": "47ddf57293e8a7d42c0801a726d1a699b515ecd6"
+            "commit": "65168ee5f2d1c987c77ea29158acbe76066f03d4"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
