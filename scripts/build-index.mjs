@@ -100,12 +100,12 @@ const PLUGINS = [
     repo: 'doraasn/dsh-speed-monitor',
     title: { zh: '速度监控', en: 'Speed Monitor' },
     description: {
-      zh: '每 5 分钟采样一次 OpenAI 兼容中转的流式速度，侧栏卡片看首字延迟与总耗时，设置页看曲线。',
-      en: 'Sample the streaming speed of an OpenAI-compatible relay every 5 minutes: first-token latency and total time in a sidebar card, plus curves in Settings.',
+      zh: '侧栏入口点开右侧面板，显示每 5 分钟采样的中转流式速度曲线（首字延迟与总耗时）。',
+      en: 'A sidebar entry opens a right-hand panel with streaming-speed curves sampled every 5 minutes from an OpenAI-compatible relay.',
     },
     category: 'monitor',
     labels: ['sidebar', 'no-deps'],
-    keywords: ['speed', 'latency', 'stream', 'monitor', 'sidebar'],
+    keywords: ['speed', 'latency', 'stream', 'monitor', 'sidebar', 'panel'],
     added: 1793760255,
   },
 ]
