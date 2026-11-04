@@ -167,12 +167,12 @@
       },
       "versions": [
         {
-          "version": "0.1.1",
-          "publishTimestamp": 1793326419,
+          "version": "0.1.2",
+          "publishTimestamp": 1793798569,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-settings.git",
-            "commit": "6dfb7dce7157549c783da8cc36daa4aaba9d6e85"
+            "commit": "2442de55deaf7db553c7a880d7036225224ec545"
           }
         }
       ]
@@ -263,12 +263,12 @@
       },
       "versions": [
         {
-          "version": "0.1.0",
-          "publishTimestamp": 1793668724,
+          "version": "0.1.1",
+          "publishTimestamp": 1793798472,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-session-meta.git",
-            "commit": "ade9563a6dd846a35db06f81c0d5ed4be965b2c5"
+            "commit": "e6fd084b6a4f248e16e7a1dddf7d54ed3aba8963"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -362,12 +362,12 @@
       },
       "versions": [
         {
-          "version": "0.1.3",
-          "publishTimestamp": 1793326383,
+          "version": "0.1.4",
+          "publishTimestamp": 1793798492,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-sidebar-compact.git",
-            "commit": "dd3a381f350c3a6e755eb62dc22d69e82a86ac64"
+            "commit": "e672954b47833f22c750d1b19d9e4f9fce6f8c98"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -459,12 +459,12 @@
       },
       "versions": [
         {
-          "version": "1.0.6",
-          "publishTimestamp": 1793326380,
+          "version": "1.0.7",
+          "publishTimestamp": 1793798533,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "d8b17b25d6f0f1d4bc32da4bb0c4a53247e38c5e"
+            "commit": "fb6b3018c20e5c353fd1c8daa86a89cf51a7c1fe"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
