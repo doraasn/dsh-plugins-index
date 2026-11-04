@@ -108,6 +108,18 @@ const PLUGINS = [
     keywords: ['speed', 'latency', 'stream', 'monitor', 'sidebar', 'panel', 'model', 'chart'],
     added: 1793760255,
   },
+  {
+    repo: 'doraasn/dsh-side-chat',
+    title: { zh: '侧边会话', en: 'Side Chat' },
+    description: {
+      zh: 'Ctrl+Alt+S 把当前会话分叉到右栏，继承已完成的上下文，边聊边看主线；关掉标签即归档，可随时恢复。',
+      en: 'Ctrl+Alt+S forks the current session into a right-hand chat that inherits the completed context and runs beside the main thread; closing the tab archives it, restorable at any time.',
+    },
+    category: 'chat',
+    labels: ['sidebar', 'no-deps'],
+    keywords: ['side', 'chat', 'fork', 'branch', 'sidebar', 'context', 'shortcut', 'archive'],
+    added: 1793778000,
+  },
 ]
 
 const CATEGORIES = {
