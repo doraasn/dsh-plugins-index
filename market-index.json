@@ -331,8 +331,8 @@
         "en": "Speed Monitor"
       },
       "description": {
-        "zh": "侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度，默认每分钟一轮；同一画布上下双区（上区时延、下区吞吐，共用时间轴），悬浮十字线看每次采样数值，每个模型一种颜色。",
-        "en": "A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list, once a minute by default; one canvas split into latency (top) and throughput (bottom) over a shared time axis, with a crosshair revealing each sample, one color per model."
+        "zh": "侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度，默认每分钟一轮；一张图每个模型一条线，顶部切换首字节 / 总耗时 / 吞吐，悬浮看三项数值。",
+        "en": "A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list, once a minute by default; one chart with a line per model, switch between first-byte, total time and throughput, hover for all three values."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-speed-monitor/main/icon.svg",
       "author": "Y77H",
@@ -362,12 +362,12 @@
       },
       "versions": [
         {
-          "version": "0.5.0",
-          "publishTimestamp": 1793772169,
+          "version": "0.5.1",
+          "publishTimestamp": 1793780720,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-speed-monitor.git",
-            "commit": "8a5480872e3ce1d48d2d2bf3ac019d562818c18c"
+            "commit": "fbec8df9c1cfa548a6c5c24828251923b4f55e32"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
