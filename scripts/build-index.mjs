@@ -22,6 +22,10 @@ const DRY = process.argv.includes('--dry-run')
  */
 const AUTHORS = ['Y77H']
 
+/** 是否允许把条目切到 npm 源。默认关：npm 同名包可能被别人占用（如 dsh-sidebar-compact），
+ *  一旦对方发了同名同版本，索引会自动切到 npm 源，用户就装到别人的代码。 */
+const ALLOW_NPM_SOURCE = false
+
 /** 每个插件的展示信息（仓库名 -> 索引条目元数据）。新增插件在这里加一项即可。 */
 const PLUGINS = [
   {
@@ -260,7 +264,9 @@ async function buildEntry(config) {
   }
   const pkgFile = await api(`/repos/${config.repo}/contents/package.json?ref=${latest.sha}`)
   const pkg = JSON.parse(Buffer.from(pkgFile.content, 'base64').toString('utf8'))
-  const useNpm = await npmHas(pkg.name, latest.version)
+  /* npm 同名被占用时会装到别人的包（dsh-sidebar-compact 已被第三方占用，同名版本一旦撞上就切源），
+     所以默认只走 git + 固定 commit；确实要启用 npm 源时把 ALLOW_NPM_SOURCE 改成 true 并逐条评估 */
+  const useNpm = ALLOW_NPM_SOURCE ? await npmHas(pkg.name, latest.version) : false
   console.log(`  ${config.repo}  v${latest.version}${latest.fromTag ? ' (tag)' : ' (head)'} -> ${latest.sha.slice(0, 8)}  name=${pkg.name}  source=${useNpm ? 'npm' : 'git'}`)
   return {
     name: pkg.name,
