@@ -13,6 +13,11 @@ on:
 permissions:
   contents: write
 
+# 同一时刻只跑一个：并发重建会双双 commit，后推的那个被拒（实测 2026-11-05）
+concurrency:
+  group: update-market-index
+  cancel-in-progress: false
+
 jobs:
   rebuild:
     runs-on: ubuntu-latest
@@ -38,4 +43,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add market-index.json
           git commit -m "chore: 自动更新插件市场索引"
-          git push
+          # 并发/远端抢先提交时 rebase 后重试，避免整轮 run 因为 push 被拒而失败
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push origin main; then
+              exit 0
+            fi
+            echo "push 失败，第 $i 次重试"
+            sleep 5
+          done
+          echo "push 重试 3 次仍失败"
+          exit 1
