@@ -413,12 +413,12 @@
       },
       "versions": [
         {
-          "version": "0.9.0",
-          "publishTimestamp": 1793869772,
+          "version": "0.9.1",
+          "publishTimestamp": 1793870592,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-speed-monitor.git",
-            "commit": "38b0c4681cecde2412b66f25b83d14a2abf375d0"
+            "commit": "d3cee8a9bdf1f6667816925aefda7911eb977892"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
