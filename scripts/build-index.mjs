@@ -292,11 +292,40 @@ async function buildEntry(config) {
 }
 
 const entries = []
+const failed = []
 for (const config of PLUGINS) {
-  const entry = await buildEntry(config)
+  /* 每个条目重试 3 次：tag 刚推上去时 GitHub 可能还取不到文件 */
+  let entry = null
+  let lastError = null
+  for (let attempt = 0; attempt < 3 && !entry; attempt++) {
+    try {
+      entry = await buildEntry(config)
+    } catch (error) {
+      lastError = error
+      await new Promise((resolve) => setTimeout(resolve, 1500 * (attempt + 1)))
+    }
+  }
   if (entry) entries.push(entry)
+  else {
+    failed.push(`${config.repo}: ${lastError ? lastError.message : '未产出条目（缺 tag 或身份不一致）'}`)
+    console.log(`  跳过 ${config.repo}${lastError ? `（${lastError.message}）` : ''}`)
+  }
 }
 entries.sort((left, right) => left.name.localeCompare(right.name))
+
+/* 护栏：抓取失败或条目变少时宁可不写，也不要把残缺索引推上去 */
+if (failed.length) {
+  console.error(`\n${failed.length} 个条目抓取失败，本次不写文件：`)
+  for (const line of failed) console.error(`  - ${line}`)
+  process.exit(1)
+}
+const previousDoc = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null
+const previousCount = previousDoc?.plugins?.length ?? 0
+const allowShrink = process.argv.includes('--allow-shrink')
+if (!allowShrink && previousCount > entries.length) {
+  console.error(`条目数从 ${previousCount} 降到 ${entries.length}，疑似抓取不完整；确认要删插件时加 --allow-shrink 重跑`)
+  process.exit(1)
+}
 
 const doc = {
   format: 1,
