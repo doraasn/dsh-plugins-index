@@ -77,17 +77,6 @@ const PLUGINS = [
     added: 1793340000,
   },
   {
-    repo: 'doraasn/dsh-mobile-access',
-    title: { zh: '移动访问', en: 'Mobile Access' },
-    description: {
-      zh: '手机/平板访问桌面 DSH：轻量反向代理 + 设备配对 + 移动页模块裁剪，隧道交给外部 cloudflared/cpolar。',
-      en: 'Access desktop DSH from phone or tablet: lightweight reverse proxy, device pairing and trimmed mobile pages; tunneling is delegated to cloudflared/cpolar.',
-    },
-    category: 'settings',
-    keywords: ['mobile', 'pairing', 'proxy', 'remote', 'lan'],
-    added: 1793938800,
-  },
-  {
     repo: 'doraasn/dsh-session-meta',
     title: { zh: '会话概览', en: 'Session Overview' },
     description: {

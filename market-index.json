@@ -129,50 +129,6 @@
       ]
     },
     {
-      "name": "dsh-mobile-access",
-      "title": {
-        "zh": "移动访问",
-        "en": "Mobile Access"
-      },
-      "description": {
-        "zh": "手机/平板访问桌面 DSH：轻量反向代理 + 设备配对 + 移动页模块裁剪，隧道交给外部 cloudflared/cpolar。",
-        "en": "Access desktop DSH from phone or tablet: lightweight reverse proxy, device pairing and trimmed mobile pages; tunneling is delegated to cloudflared/cpolar."
-      },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-mobile-access/main/icon.svg",
-      "author": "Y77H",
-      "homepage": "https://github.com/doraasn/dsh-mobile-access",
-      "repository": {
-        "url": "https://github.com/doraasn/dsh-mobile-access"
-      },
-      "metadata": {
-        "category": "settings",
-        "keywords": [
-          "mobile",
-          "pairing",
-          "proxy",
-          "remote",
-          "lan"
-        ],
-        "sortKeys": {
-          "added": 1793938800
-        }
-      },
-      "versions": [
-        {
-          "version": "0.1.0",
-          "publishTimestamp": 1793939042,
-          "source": {
-            "type": "git",
-            "url": "https://github.com/doraasn/dsh-mobile-access.git",
-            "commit": "414e120113d31226e2fe0b1150220016afe1027c"
-          },
-          "engines": {
-            "dsh": ">=0.2.1-rc.2"
-          }
-        }
-      ]
-    },
-    {
       "name": "dsh-quota-board",
       "title": {
         "zh": "额度看板",
