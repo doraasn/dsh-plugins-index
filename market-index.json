@@ -459,12 +459,12 @@
       },
       "versions": [
         {
-          "version": "1.0.7",
-          "publishTimestamp": 1793798533,
+          "version": "1.0.9",
+          "publishTimestamp": 1793886147,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "fb6b3018c20e5c353fd1c8daa86a89cf51a7c1fe"
+            "commit": "03c80d238a7e198e4316a8504b0f15c563ed0ddf"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
