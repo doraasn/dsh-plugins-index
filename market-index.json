@@ -71,12 +71,6 @@
           "zh": "零依赖",
           "en": "Zero dependency"
         }
-      },
-      "needs-mobile": {
-        "title": {
-          "zh": "需 dsh-mobile",
-          "en": "Needs dsh-mobile"
-        }
       }
     },
     "sortKeys": {
@@ -135,44 +129,45 @@
       ]
     },
     {
-      "name": "dsh-mobile-settings",
+      "name": "dsh-mobile-access",
       "title": {
-        "zh": "移动访问设置",
-        "en": "Mobile Access Settings"
+        "zh": "移动访问",
+        "en": "Mobile Access"
       },
       "description": {
-        "zh": "把 dsh-mobile 的「移动访问」入口从侧栏收进设置页，功能仍由 dsh-mobile 提供（需先安装并启用它）。",
-        "en": "Move the dsh-mobile \"Mobile access\" entry from the sidebar into Settings. The feature itself comes from dsh-mobile, which must be installed first."
+        "zh": "手机/平板访问桌面 DSH：轻量反向代理 + 设备配对 + 移动页模块裁剪，隧道交给外部 cloudflared/cpolar。",
+        "en": "Access desktop DSH from phone or tablet: lightweight reverse proxy, device pairing and trimmed mobile pages; tunneling is delegated to cloudflared/cpolar."
       },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-mobile-settings/main/icon.svg",
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-mobile-access/main/icon.svg",
       "author": "Y77H",
-      "homepage": "https://github.com/doraasn/dsh-mobile-settings",
+      "homepage": "https://github.com/doraasn/dsh-mobile-access",
       "repository": {
-        "url": "https://github.com/doraasn/dsh-mobile-settings"
+        "url": "https://github.com/doraasn/dsh-mobile-access"
       },
       "metadata": {
         "category": "settings",
         "keywords": [
           "mobile",
-          "settings",
-          "lan",
-          "remote"
-        ],
-        "labels": [
-          "needs-mobile"
+          "pairing",
+          "proxy",
+          "remote",
+          "lan"
         ],
         "sortKeys": {
-          "added": 1792659600
+          "added": 1793938800
         }
       },
       "versions": [
         {
-          "version": "0.1.2",
-          "publishTimestamp": 1793798569,
+          "version": "0.1.0",
+          "publishTimestamp": 1793939042,
           "source": {
             "type": "git",
-            "url": "https://github.com/doraasn/dsh-mobile-settings.git",
-            "commit": "2442de55deaf7db553c7a880d7036225224ec545"
+            "url": "https://github.com/doraasn/dsh-mobile-access.git",
+            "commit": "414e120113d31226e2fe0b1150220016afe1027c"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
           }
         }
       ]

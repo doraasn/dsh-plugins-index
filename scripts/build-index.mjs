@@ -77,16 +77,15 @@ const PLUGINS = [
     added: 1793340000,
   },
   {
-    repo: 'doraasn/dsh-mobile-settings',
-    title: { zh: '移动访问设置', en: 'Mobile Access Settings' },
+    repo: 'doraasn/dsh-mobile-access',
+    title: { zh: '移动访问', en: 'Mobile Access' },
     description: {
-      zh: '把 dsh-mobile 的「移动访问」入口从侧栏收进设置页，功能仍由 dsh-mobile 提供（需先安装并启用它）。',
-      en: 'Move the dsh-mobile "Mobile access" entry from the sidebar into Settings. The feature itself comes from dsh-mobile, which must be installed first.',
+      zh: '手机/平板访问桌面 DSH：轻量反向代理 + 设备配对 + 移动页模块裁剪，隧道交给外部 cloudflared/cpolar。',
+      en: 'Access desktop DSH from phone or tablet: lightweight reverse proxy, device pairing and trimmed mobile pages; tunneling is delegated to cloudflared/cpolar.',
     },
     category: 'settings',
-    labels: ['needs-mobile'],
-    keywords: ['mobile', 'settings', 'lan', 'remote'],
-    added: 1792659600,
+    keywords: ['mobile', 'pairing', 'proxy', 'remote', 'lan'],
+    added: 1793938800,
   },
   {
     repo: 'doraasn/dsh-session-meta',
@@ -140,7 +139,6 @@ const LABELS = {
   sidebar: { title: { zh: '侧栏', en: 'Sidebar' } },
   webdav: { title: { zh: 'WebDAV', en: 'WebDAV' } },
   'no-deps': { title: { zh: '零依赖', en: 'Zero dependency' } },
-  'needs-mobile': { title: { zh: '需 dsh-mobile', en: 'Needs dsh-mobile' } },
 }
 
 async function api(path_) {
