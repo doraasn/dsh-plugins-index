@@ -78,7 +78,7 @@ const PLUGINS = [
   },
   // 待 0.1.1 修复版发布后启用（用户要求改名「移动控制」）：
   // {
-  //   repo: 'doraasn/dsh-mobile-access',
+  //   repo: 'doraasn/dsh-mobile-control',
   //   title: { zh: '移动控制', en: 'Mobile Control' },
   //   description: {
   //     zh: '手机/平板访问桌面 DSH：轻量反向代理 + 设备配对 + 移动页模块裁剪，隧道交给外部 cloudflared/cpolar。',
