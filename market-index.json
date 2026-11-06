@@ -314,12 +314,12 @@
       },
       "versions": [
         {
-          "version": "0.1.5",
-          "publishTimestamp": 1793932686,
+          "version": "0.1.6",
+          "publishTimestamp": 1793933134,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-side-chat.git",
-            "commit": "76bef8dc51b1fb4ac6913fd395ab1f02aa7c0a98"
+            "commit": "63a1ab6b2401b5e57c4bafee6d3857a78fbec3de"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
