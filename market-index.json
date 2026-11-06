@@ -124,12 +124,12 @@
       },
       "versions": [
         {
-          "version": "0.5.6",
-          "publishTimestamp": 1793798179,
+          "version": "0.5.7",
+          "publishTimestamp": 1793884915,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-cloud-sync.git",
-            "commit": "eb76e5ef9e6672b31c5921a9bd7e9f5f7a0df0dd"
+            "commit": "3571232ab6ab6c38a0c7ed88366d19192e0ebaf3"
           }
         }
       ]
@@ -263,12 +263,12 @@
       },
       "versions": [
         {
-          "version": "0.1.1",
-          "publishTimestamp": 1793798472,
+          "version": "0.1.3",
+          "publishTimestamp": 1793884972,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-session-meta.git",
-            "commit": "e6fd084b6a4f248e16e7a1dddf7d54ed3aba8963"
+            "commit": "31db578e811626bfac9c6934a399ec3788ead23b"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -413,12 +413,12 @@
       },
       "versions": [
         {
-          "version": "0.9.3",
-          "publishTimestamp": 1793872675,
+          "version": "0.9.4",
+          "publishTimestamp": 1793884589,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-speed-monitor.git",
-            "commit": "35fd5243ec5169d9517f3e3269d000b99e221654"
+            "commit": "a68edfbc36afe7b2d1a5973ef898de6bc9d1b345"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
