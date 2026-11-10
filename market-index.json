@@ -118,12 +118,12 @@
       },
       "versions": [
         {
-          "version": "0.5.10",
-          "publishTimestamp": 1793956694,
+          "version": "0.5.11",
+          "publishTimestamp": 1794318844,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-cloud-sync.git",
-            "commit": "017c684ee2a6be40c1cd554ee04c4f20eaad0f29"
+            "commit": "3dec276faf5a9fece7c6b76edcf81a0696049475"
           }
         }
       ]
@@ -159,12 +159,12 @@
       },
       "versions": [
         {
-          "version": "0.1.1",
-          "publishTimestamp": 1794295306,
+          "version": "0.1.2",
+          "publishTimestamp": 1794322785,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-control.git",
-            "commit": "8cdf87e94ac28a6577e1c0a270143cc38ba4b2e4"
+            "commit": "78d6faf4dc6328e2fda068ac7c380b472acd72fa"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
