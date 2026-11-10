@@ -357,12 +357,12 @@
       },
       "versions": [
         {
-          "version": "0.1.5",
-          "publishTimestamp": 1793927163,
+          "version": "0.1.6",
+          "publishTimestamp": 1794312001,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-sidebar-compact.git",
-            "commit": "9350482b756a6a260d84f34d51301f6c2f5b69d0"
+            "commit": "b0085553ddd48441643c734bdb88d2dd5f5378a4"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
