@@ -103,8 +103,8 @@ const PLUGINS = [
     repo: 'doraasn/dsh-speed-monitor',
     title: { zh: '速度监控', en: 'Speed Monitor' },
     description: {
-      zh: '侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度：上方 KPI 概览与配置栏（采样间隔、每轮次数、提示词、模型），下方全宽平滑曲线可切首字节 / 总耗时 / 吞吐，默认每分钟一轮。',
-      en: 'A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list: KPI overview and settings on top (interval, runs per round, prompt, models), a full-width smooth chart below with switchable first-byte / total-time / throughput metrics, once a minute by default.',
+      zh: '侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度：上方 KPI 概览与配置栏（采样间隔、每轮次数、提示词、模型），下方全宽平滑曲线可切首字节 / 总耗时 / 吞吐，默认每分钟一轮；历史记录全量保留，图表按像素宽度降采样，几万点也不卡。',
+      en: 'A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list: KPI overview and settings on top (interval, runs per round, prompt, models), a full-width smooth chart below with switchable first-byte / total-time / throughput metrics, once a minute by default. History is kept in full and the chart downsamples by pixel width, so tens of thousands of points stay smooth.',
     },
     category: 'monitor',
     labels: ['sidebar', 'no-deps'],

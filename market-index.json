@@ -209,12 +209,12 @@
       },
       "versions": [
         {
-          "version": "0.12.4",
-          "publishTimestamp": 1794335837,
+          "version": "0.12.5",
+          "publishTimestamp": 1794366709,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "05966ab21ff39db03e11023aa935c08ca0c79156"
+            "commit": "b72ae3bd8882d60c767f391cb36682f4daaf532b"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -377,8 +377,8 @@
         "en": "Speed Monitor"
       },
       "description": {
-        "zh": "侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度：上方 KPI 概览与配置栏（采样间隔、每轮次数、提示词、模型），下方全宽平滑曲线可切首字节 / 总耗时 / 吞吐，默认每分钟一轮。",
-        "en": "A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list: KPI overview and settings on top (interval, runs per round, prompt, models), a full-width smooth chart below with switchable first-byte / total-time / throughput metrics, once a minute by default."
+        "zh": "侧栏入口点开右侧面板，用 DSH 的模型清单测中转流式速度：上方 KPI 概览与配置栏（采样间隔、每轮次数、提示词、模型），下方全宽平滑曲线可切首字节 / 总耗时 / 吞吐，默认每分钟一轮；历史记录全量保留，图表按像素宽度降采样，几万点也不卡。",
+        "en": "A sidebar entry opens a right-hand panel that benchmarks an OpenAI-compatible relay using the DSH model list: KPI overview and settings on top (interval, runs per round, prompt, models), a full-width smooth chart below with switchable first-byte / total-time / throughput metrics, once a minute by default. History is kept in full and the chart downsamples by pixel width, so tens of thousands of points stay smooth."
       },
       "icon": "https://raw.githubusercontent.com/doraasn/dsh-speed-monitor/main/icon.svg",
       "author": "Y77H",
@@ -408,12 +408,12 @@
       },
       "versions": [
         {
-          "version": "0.9.9",
-          "publishTimestamp": 1794318828,
+          "version": "0.10.0",
+          "publishTimestamp": 1794365936,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-speed-monitor.git",
-            "commit": "e324b1189a8956a18ed80ba3240d2f80b69039cb"
+            "commit": "2da11270b5cfe51c295709eee6b1735416d07916"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
