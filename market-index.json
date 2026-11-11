@@ -159,12 +159,12 @@
       },
       "versions": [
         {
-          "version": "0.1.4",
-          "publishTimestamp": 1794327486,
+          "version": "0.1.5",
+          "publishTimestamp": 1794408688,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-control.git",
-            "commit": "2ea1ad363f210ed0df2c3bcde8615195525e2956"
+            "commit": "967333de8d548c35ea34ae14e315f5221081ec2f"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
