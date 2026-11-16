@@ -54,7 +54,7 @@ const PLUGINS = [
   },
   {
     repo: 'doraasn/dsh-web-chat',
-    title: { zh: '网页会话', en: 'Web Chat' },
+    title: { zh: '聊天', en: 'Chat' },
     description: {
       zh: '侧栏嵌入 chat.deepseek.com，切换面板不重载，记住上次会话并恢复登录状态。',
       en: 'Embed chat.deepseek.com in a sidebar panel, keep it alive across switches, remember the last conversation and restore the login snapshot.',
