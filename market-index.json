@@ -423,8 +423,8 @@
     {
       "name": "dsh-web-chat",
       "title": {
-        "zh": "网页会话",
-        "en": "Web Chat"
+        "zh": "聊天",
+        "en": "Chat"
       },
       "description": {
         "zh": "侧栏嵌入 chat.deepseek.com，切换面板不重载，记住上次会话并恢复登录状态。",
@@ -453,12 +453,12 @@
       },
       "versions": [
         {
-          "version": "1.0.10",
-          "publishTimestamp": 1794318752,
+          "version": "1.0.11",
+          "publishTimestamp": 1794817423,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "a22387592c7710d47eaed27cea114cc507743538"
+            "commit": "a3fe0eba3c91b007ac439b8d062bb03294146937"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
