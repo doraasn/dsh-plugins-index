@@ -323,20 +323,20 @@
       ]
     },
     {
-      "name": "dsh-sidebar-compact",
+      "name": "dsh-sidebar-function-manager",
       "title": {
-        "zh": "侧栏收纳",
-        "en": "Sidebar Compact"
+        "zh": "侧边功能管理",
+        "en": "Sidebar Function Manager"
       },
       "description": {
-        "zh": "侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 侧栏收纳 里逐个勾选。",
-        "en": "Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose per panel in Settings."
+        "zh": "侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 侧边功能管理 里逐个勾选，并支持拖动排序。",
+        "en": "Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose and drag-reorder panels in Settings."
       },
-      "icon": "https://raw.githubusercontent.com/doraasn/dsh-sidebar-compact/main/icon.svg",
+      "icon": "https://raw.githubusercontent.com/doraasn/dsh-sidebar-function-manager/main/icon.svg",
       "author": "Y77H",
-      "homepage": "https://github.com/doraasn/dsh-sidebar-compact",
+      "homepage": "https://github.com/doraasn/dsh-sidebar-function-manager",
       "repository": {
-        "url": "https://github.com/doraasn/dsh-sidebar-compact"
+        "url": "https://github.com/doraasn/dsh-sidebar-function-manager"
       },
       "metadata": {
         "category": "ui",
@@ -345,24 +345,23 @@
           "layout",
           "more-menu",
           "compact",
-          "panels"
+          "panels",
+          "order"
         ],
         "labels": [
           "sidebar",
           "no-deps"
         ],
-        "sortKeys": {
-          "added": 1793340000
-        }
+        "sortKeys": {}
       },
       "versions": [
         {
-          "version": "0.1.6",
-          "publishTimestamp": 1794312001,
+          "version": "0.2.0",
+          "publishTimestamp": 1794807317,
           "source": {
             "type": "git",
-            "url": "https://github.com/doraasn/dsh-sidebar-compact.git",
-            "commit": "b0085553ddd48441643c734bdb88d2dd5f5378a4"
+            "url": "https://github.com/doraasn/dsh-sidebar-function-manager.git",
+            "commit": "3be160ebc6dbd666ba5e78de9aea9a8ab6ddd830"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
