@@ -65,16 +65,15 @@ const PLUGINS = [
     added: 1792659600,
   },
   {
-    repo: 'doraasn/dsh-sidebar-compact',
-    title: { zh: '侧栏收纳', en: 'Sidebar Compact' },
+    repo: 'doraasn/dsh-sidebar-function-manager',
+    title: { zh: '侧边功能管理', en: 'Sidebar Function Manager' },
     description: {
-      zh: '侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 侧栏收纳 里逐个勾选。',
-      en: 'Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose per panel in Settings.',
+      zh: '侧栏只保留勾选的入口（默认只有聊天），插件、跨会话消息、自动化任务等全局面板收进「更多」菜单；留哪个、收哪个在 设置 → 侧边功能管理 里逐个勾选，并支持拖动排序。',
+      en: 'Keep only Chat in the sidebar and fold every other global panel (plugins, session messaging, automations) into the More menu; choose and drag-reorder panels in Settings.',
     },
     category: 'ui',
     labels: ['sidebar', 'no-deps'],
-    keywords: ['sidebar', 'layout', 'more-menu', 'compact', 'panels'],
-    added: 1793340000,
+    keywords: ['sidebar', 'layout', 'more-menu', 'compact', 'panels', 'order'],
   },
   {
     repo: 'doraasn/dsh-mobile-control',
