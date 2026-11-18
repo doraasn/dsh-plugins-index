@@ -159,12 +159,12 @@
       },
       "versions": [
         {
-          "version": "0.1.11",
-          "publishTimestamp": 1794795580,
+          "version": "0.1.12",
+          "publishTimestamp": 1794993301,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-control.git",
-            "commit": "98cac2d658aefc0ef30a81dae197eab68c733cfa"
+            "commit": "b84e2ed5e500f01cc2d7f14a2151bb9f41cb1013"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -209,12 +209,12 @@
       },
       "versions": [
         {
-          "version": "0.12.8",
-          "publishTimestamp": 1794968927,
+          "version": "0.12.9",
+          "publishTimestamp": 1794992660,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "671c95fa9a337d39b791102d17b574d77485f463"
+            "commit": "6eff19c1dab2df2ae96324b76293a7ddec15e503"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -258,12 +258,12 @@
       },
       "versions": [
         {
-          "version": "0.1.6",
-          "publishTimestamp": 1794566248,
+          "version": "0.1.7",
+          "publishTimestamp": 1794993341,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-session-meta.git",
-            "commit": "b42ea163af479bdd1972026a564f7798d3c87f26"
+            "commit": "1c3650bb6eaa9e89ded57f5d006d00191b3fe2df"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -453,12 +453,12 @@
       },
       "versions": [
         {
-          "version": "1.0.11",
-          "publishTimestamp": 1794817423,
+          "version": "1.0.12",
+          "publishTimestamp": 1794993339,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-web-chat.git",
-            "commit": "a3fe0eba3c91b007ac439b8d062bb03294146937"
+            "commit": "bc60493e0c4c3c7f3ecd7e8c1891acb8cef11461"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
