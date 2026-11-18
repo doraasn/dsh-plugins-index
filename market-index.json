@@ -159,12 +159,12 @@
       },
       "versions": [
         {
-          "version": "0.1.12",
-          "publishTimestamp": 1794993301,
+          "version": "0.1.13",
+          "publishTimestamp": 1794993528,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-mobile-control.git",
-            "commit": "b84e2ed5e500f01cc2d7f14a2151bb9f41cb1013"
+            "commit": "37b9600ba33855f3a1cfc59bbba0969fc85d9478"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
@@ -209,12 +209,12 @@
       },
       "versions": [
         {
-          "version": "0.12.9",
-          "publishTimestamp": 1794992660,
+          "version": "0.12.10",
+          "publishTimestamp": 1794993543,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "6eff19c1dab2df2ae96324b76293a7ddec15e503"
+            "commit": "29852792e22bf499f5d442af56f81bfd635bfb1d"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
