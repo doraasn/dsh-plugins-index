@@ -118,12 +118,12 @@
       },
       "versions": [
         {
-          "version": "0.5.22",
-          "publishTimestamp": 1794995537,
+          "version": "0.5.23",
+          "publishTimestamp": 1794995775,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-cloud-sync.git",
-            "commit": "984daf286096e0c05ad35a4aaf12a4e9c2ad604c"
+            "commit": "e46d07b8efb090b1e6b50e53aeae67fc71200be0"
           }
         }
       ]
@@ -209,12 +209,12 @@
       },
       "versions": [
         {
-          "version": "0.12.12",
-          "publishTimestamp": 1794995480,
+          "version": "0.12.13",
+          "publishTimestamp": 1794996343,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-quota-board.git",
-            "commit": "3227b16db286f2d233d9f2e74080fb6fc66b0e15"
+            "commit": "34d44851521894afb7905bfc2bc95085a21d41cf"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
