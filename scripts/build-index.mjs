@@ -32,8 +32,8 @@ const PLUGINS = [
     repo: 'doraasn/dsh-quota-board',
     title: { zh: '额度看板', en: 'Quota Board' },
     description: {
-      zh: '侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数（账户无周额度时自动只显示 5 小时，不出现空数据），以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。',
-      en: 'Sidebar cards for Codex 5-hour and weekly limits (the 5-hour window alone when the plan reports no weekly quota, no empty placeholders) plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI.',
+      zh: '侧栏卡片显示 Codex 的 5 小时 / 周额度与重置次数（账户无周额度时自动只显示 5 小时，不出现空数据），以及任意 OpenAI 兼容中转站、DeepSeek、智谱 Z.AI 的余额。支持多供应商、多账号、拖动排序、显示开关与字段映射。另有「今日预估用量 / 花费」与点击卡片打开的每日消费面板（按本机会话日志 × DeepSeek 官方价目表估算）。',
+      en: 'Sidebar cards for Codex 5-hour and weekly limits (the 5-hour window alone when the plan reports no weekly quota, no empty placeholders) plus balances of any OpenAI-compatible relay, DeepSeek and Zhipu Z.AI. Plus an estimated today’s tokens/spend and a per-day cost panel (estimated from local session logs × DeepSeek list prices).',
     },
     category: 'quota',
     labels: ['codex', 'sidebar', 'no-deps'],
