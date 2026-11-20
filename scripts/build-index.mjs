@@ -122,6 +122,18 @@ const PLUGINS = [
     keywords: ['side', 'chat', 'fork', 'branch', 'sidebar', 'context', 'shortcut', 'archive'],
     added: 1793778000,
   },
+  {
+    repo: 'doraasn/dsh-session-hub',
+    title: { zh: '会话管理', en: 'Session Hub' },
+    description: {
+      zh: '给 DSH 会话里的 Agent 提供跨项目会话能力：跨项目列会话、发消息（冷会话唤醒、按会话免打扰、写作用域提醒）、新建/更名/归档/置顶、读取/新建/启动目标、预览最近对话；设置页逐项开关，无侧栏入口。',
+      en: 'Session tools for DSH agents: list sessions across projects, message peers (cold-session wake, per-session opt-out, write-scope warnings), create/rename/archive/pin sessions, read/create/start goals, preview recent messages; per-capability switches in Settings, no sidebar entry.',
+    },
+    category: 'chat',
+    labels: ['no-deps'],
+    keywords: ['session', 'messaging', 'goal', 'tools', 'cross-project', 'settings'],
+    added: 1795155889,
+  },
 ]
 
 const CATEGORIES = {
