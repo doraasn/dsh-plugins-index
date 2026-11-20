@@ -257,12 +257,12 @@
       },
       "versions": [
         {
-          "version": "0.1.0",
-          "publishTimestamp": 1795155835,
+          "version": "0.1.1",
+          "publishTimestamp": 1795156314,
           "source": {
             "type": "git",
             "url": "https://github.com/doraasn/dsh-session-hub.git",
-            "commit": "0d4558b7929b0b3fc479ce983e0da54791ce8131"
+            "commit": "965aea7d50d8d0839877bcb758d11ab4165913e6"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2"
